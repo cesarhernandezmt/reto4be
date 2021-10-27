@@ -23,8 +23,8 @@ public class ScoreRepository {
         return (List<Score>) scoreCrudRepository.findAll();
     }
     
-    public Optional<Score> getScore(int id){
-        return scoreCrudRepository.findById(id);
+    public Optional<Score> getScore(int idScore){
+        return scoreCrudRepository.findById(idScore);
     }
     
     public Score save(Score score) {

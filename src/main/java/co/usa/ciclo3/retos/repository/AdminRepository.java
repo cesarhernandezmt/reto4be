@@ -23,8 +23,8 @@ public class AdminRepository {
         return (List<Admin>) adminCrudRepository.findAll();
     }
     
-    public Optional<Admin> getAdmin(int id){
-        return adminCrudRepository.findById(id);
+    public Optional<Admin> getAdmin(int idAdmin){
+        return adminCrudRepository.findById(idAdmin);
     }
     
     public Admin save(Admin admin) {

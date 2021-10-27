@@ -23,8 +23,8 @@ public class ScoreService {
         return scoreRepository.getAll();
     }
     
-    public Optional<Score> getScore(int id) {
-        return scoreRepository.getScore(id);
+    public Optional<Score> getScore(int idScore) {
+        return scoreRepository.getScore(idScore);
     }
     
     public Score save(Score score) {

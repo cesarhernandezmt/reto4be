@@ -39,8 +39,8 @@ public class ScoreController {
     }
     
     @GetMapping("/{id}")
-    public Optional<Score> getScore(@PathVariable("id") int id) {
-        return scoreService.getScore(id);
+    public Optional<Score> getScore(@PathVariable("id") int idScore) {
+        return scoreService.getScore(idScore);
     } 
     
     @PostMapping("/save")

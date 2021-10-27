@@ -23,8 +23,8 @@ public class ClientService {
         return clientRepository.getAll();
     }
     
-    public Optional<Client> getClient(int id) {
-        return clientRepository.getClient(id);
+    public Optional<Client> getClient(int idClient) {
+        return clientRepository.getClient(idClient);
     }
     
     public Client save(Client client) {

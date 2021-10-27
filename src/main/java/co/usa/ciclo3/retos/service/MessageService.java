@@ -23,8 +23,8 @@ public class MessageService {
         return messageRepository.getAll();
     }
     
-    public Optional<Message> getMessage(int id) {
-        return messageRepository.getMessage(id);
+    public Optional<Message> getMessage(int idMessage) {
+        return messageRepository.getMessage(idMessage);
     }
     
     public Message save(Message message) {
@@ -45,7 +45,7 @@ public class MessageService {
     public Message update(Message message) {
         if(message.getIdMessage() != null) {
             Optional<Message> messageOptional = messageRepository.getMessage(message.getIdMessage());
-            if(messageOptional.isEmpty()) {
+            if(!messageOptional.isEmpty()) {
                 if(message.getMessageText() != null) {
                     messageOptional.get().setMessageText(message.getMessageText());
                 }

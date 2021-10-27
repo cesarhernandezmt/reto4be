@@ -80,7 +80,7 @@ public class Reservation implements Serializable {
     }
 
     public String getStatus() {
-        return status = "created";
+        return status;
     }
 
     public void setStatus(String status) {
