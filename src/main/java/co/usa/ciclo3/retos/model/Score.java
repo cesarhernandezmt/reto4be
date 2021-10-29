@@ -7,12 +7,13 @@ package co.usa.ciclo3.retos.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -27,9 +28,9 @@ public class Score implements Serializable {
     private Integer score;
     
     
-    @OneToOne(cascade = {CascadeType.PERSIST}, mappedBy = "score")
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "score")
     @JsonIgnoreProperties("score")
-    private Reservation reservation;
+    private List<Reservation> reservations;
 
     
     public Integer getIdScore() {
@@ -48,13 +49,12 @@ public class Score implements Serializable {
         this.score = score;
     }
 
-    public Reservation getReservation() {
-        return reservation;
+    public List<Reservation> getReservations() {
+        return reservations;
     }
 
-    public void setReservation(Reservation reservation) {
-        this.reservation = reservation;
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
     }
-
     
 }
